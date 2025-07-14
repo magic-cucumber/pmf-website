@@ -91,6 +91,30 @@ Currently, there are [third-party packages](https://aur.archlinux.org/packages?O
 
 3. Tap to install, and pay attention to options like `Ignore Risk` during installation.
 
+## iOS Installation
+
+1. Download `iOS.ipa` to your computer.
+
+2. Use a signing tool to sign it.
+
+   ::: warning
+
+   I have successfully installed and signed using `3uTools`.
+
+   If you use `TrollStore` or other signing methods, you need to ensure **you have a MacBook** to capture the app's runtime crash logs, **otherwise I will be unable to help**
+
+   :::
+
+   ::: warning
+
+   Since `1.7.4`, Pixiv-MultiPlatform's iOS support has been relaxed to iOS 16.4.
+
+   Other **workflow** versions require iOS 18+
+
+   :::
+
+3. Install and open the application.
+
 ## Uninstallation
 
 For Android, simply uninstall the app. For desktop versions, after deleting the folder, you need to remove residual files.

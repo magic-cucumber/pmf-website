@@ -70,6 +70,12 @@ If you also encounter this problem, please check the following steps:
 3. Download the link mentioned in step `2`, then click the `Select Compressed Package Path` button, choose the `.tar.gz` file you just downloaded, and try again.
 4. If it still fails, please click the link `Click this text to view detailed information`, take a screenshot of the content in the dialog box, and open the [Issue page](https://github.com/kagg886/Pixiv-MultiPlatform/issues/new?template=功能故障.md) to provide feedback.
 
+#### 3.4 - Browser Login Successful, but Failed to Parse User Configuration and Returned to Login Page
+
+This situation generally occurs when **the embedded browser's traffic goes through the system proxy, but the JVM's traffic does not go through the system proxy**.
+
+For this situation, we recommend using the **TUN** mode of `Mihomo`.
+
 ## Using Session Token Login
 
 ::: tip
@@ -107,7 +113,7 @@ Please check if the version of Pixiv-MultiPlatform you downloaded is `1.6.0` or 
 2. If you use other clients. After finding the session information exported by the client, you need to pay attention to fields such as `refresh_token`, the value of which is the login token needed by Pixiv-MultiPlatform.
    
 
-   ::: danger 温馨提示
+   ::: danger Important Note
 
    Please do not paste the Cookie directly from the web page into the chat box! PMF only accepts login credentials from mobile devices!
 
