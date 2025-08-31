@@ -59,6 +59,55 @@ Double-click the file to launch.
 
 Currently, there are [third-party packages](https://aur.archlinux.org/packages?O=0&SeB=nd&K=pixiv-multiplatform&outdated=&SB=p&SO=d&PP=50&submit=Go) available for `AUR`. You can use the `yay -S` related commands to install. We won't elaborate further on this feature.
 
+### Automated Installation Script
+
+Since some people don't want to manually create desktop files, you can create a sh script in the same directory as the downloaded .tar.gz file:
+
+```bash
+#!/bin/bash
+
+# Check if sudo is available
+if ! sudo -v &>/dev/null; then
+    echo "Sudo is not available, script will stop."
+    exit 1
+fi
+
+# Check if the tar.gz file exists
+if [ ! -f "linux.tar.gz" ]; then
+    echo "linux.tar.gz file not found!"
+    exit 1
+fi
+
+# Extract linux.tar.gz to /opt/Pixiv-MultiPlatform
+echo "Extracting files to /opt/Pixiv-MultiPlatform..."
+sudo tar -xzvf linux.tar.gz -C /opt/
+
+# Create Pixiv-MultiPlatform.desktop file
+echo "Creating the desktop entry..."
+echo "[Desktop Entry]
+Name=Pixiv-MultiPlatform
+Comment=pixiv client on multiplatform
+Exec=/opt/Pixiv-MultiPlatform/bin/Pixiv-MultiPlatform
+Icon=/opt/Pixiv-MultiPlatform/lib/Pixiv-MultiPlatform.png
+Terminal=false
+Type=Application
+Categories=Utility;" | sudo tee /usr/share/applications/Pixiv-MultiPlatform.desktop > /dev/null
+
+# Give execution permission to the desktop file
+echo "Giving execution permission to the desktop file..."
+sudo chmod +x /usr/share/applications/Pixiv-MultiPlatform.desktop
+
+# Run the Pixiv-MultiPlatform
+echo "Running Pixiv-MultiPlatform..."
+/opt/Pixiv-MultiPlatform/bin/Pixiv-MultiPlatform &
+```
+
+This script will:
+1. Check for sudo privileges
+2. Extract the application to `/opt/Pixiv-MultiPlatform`
+3. Create a desktop entry for easy access
+4. Launch the application automatically
+
 ## macOS Installation
 
 1. Download the `.dmg` file
@@ -121,3 +170,4 @@ For Android, simply uninstall the app. For desktop versions, after deleting the 
 
 1. Windows residual files are in `C:\Users\username\.config\pmf`. Simply drag them to the recycle bin.
 2. Linux residual files are in `~/.config/pmf`. Simply delete them.
+3. macOS residual files are in `~/.config/pmf`. Simply delete them.

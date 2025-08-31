@@ -59,6 +59,55 @@
 
 目前已有对于`AUR`的[第三方软件包](https://aur.archlinux.org/packages?O=0&SeB=nd&K=pixiv-multiplatform&outdated=&SB=p&SO=d&PP=50&submit=Go)，您可以使用`yay -S`相关命令进行安装，对于此类功能则不再赘述
 
+### 自动化安装脚本
+
+鉴于有人不想手工制作desktop文件，您可以在下载的.tar.gz同级目录下创建一个sh脚本：
+
+```bash
+#!/bin/bash
+
+# 检查sudo权限是否可用
+if ! sudo -v &>/dev/null; then
+    echo "Sudo权限不可用，脚本将停止执行。"
+    exit 1
+fi
+
+# 检查tar.gz文件是否存在
+if [ ! -f "linux.tar.gz" ]; then
+    echo "未找到linux.tar.gz文件！"
+    exit 1
+fi
+
+# 将linux.tar.gz解压到/opt/Pixiv-MultiPlatform
+echo "正在将文件解压到/opt/Pixiv-MultiPlatform..."
+sudo tar -xzvf linux.tar.gz -C /opt/
+
+# 创建Pixiv-MultiPlatform.desktop文件
+echo "正在创建桌面快捷方式..."
+echo "[Desktop Entry]
+Name=Pixiv-MultiPlatform
+Comment=pixiv client on multiplatform
+Exec=/opt/Pixiv-MultiPlatform/bin/Pixiv-MultiPlatform
+Icon=/opt/Pixiv-MultiPlatform/lib/Pixiv-MultiPlatform.png
+Terminal=false
+Type=Application
+Categories=Utility;" | sudo tee /usr/share/applications/Pixiv-MultiPlatform.desktop > /dev/null
+
+# 给桌面文件赋予执行权限
+echo "正在给桌面文件赋予执行权限..."
+sudo chmod +x /usr/share/applications/Pixiv-MultiPlatform.desktop
+
+# 运行Pixiv-MultiPlatform
+echo "正在启动Pixiv-MultiPlatform..."
+/opt/Pixiv-MultiPlatform/bin/Pixiv-MultiPlatform &
+```
+
+此脚本将：
+1. 检查sudo权限
+2. 将应用程序解压到 `/opt/Pixiv-MultiPlatform`
+3. 创建桌面快捷方式以便于访问
+4. 自动启动应用程序
+
 ## macOS安装
 
 1. 下载`.dmg`文件
@@ -123,3 +172,4 @@
 
 1. Windows的残留文件在`C:\Users\用户名\.config\pmf`中，直接拖进回收站即可。
 2. Linux的残留文件在`~/.config/pmf`中，直接删除即可
+3. macOS的残留文件在`~/.config\pmf`中，直接删除即可

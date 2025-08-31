@@ -66,3 +66,15 @@ You've probably seen these kinds of ~~articles~~ with no substance yet taking up
 This feature can block such content by checking the total word count of these articles, making the search results show the content you want rather than these contact exchanges or role-playing messages.
 
 > Of course, this feature can also be used to only view articles that exceed a specified word count.
+
+### Fetching Series When Fetching Novel
+
+When enabled, if a novel belongs to a series, a navigation bar will be displayed at the bottom of the novel, allowing you to quickly navigate to the previous/next chapter.
+
+If you disable this feature, the navigation bar will never appear, even for novels that are part of a series.
+
+:::tip
+
+This feature is particularly useful for reading multi-chapter novels or series, as it provides seamless navigation between chapters without having to go to the novel details page → novel series page to select one by one.
+
+:::

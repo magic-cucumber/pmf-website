@@ -81,6 +81,39 @@ The comment section on mobile is folded in the side drawer and needs to be **swi
 
 :::
 
+:::danger
+
+**Important Change Notice**: Since version v1.8.0, the swipe gesture on mobile illustration detail pages has been changed to switch between previous/next images.
+
+To restore the swipe-to-open comment section functionality, please configure the following setting path:
+**Illustration Settings** → **Illustration detail page swipe action** → Select **Expand Comment**
+
+:::
+
 1. Enter text in the input box and send to make a comment.
 2. Click the pen/three-dot icon in the upper right corner to reply to someone's comment.
 3. Click the arrow on the far left of the input box while in reply mode to exit reply mode.
+
+## 3. Illustration Preview Settings
+
+### Filter by Aspect Ratio
+
+This feature allows you to conveniently filter illustrations for computer or phone wallpapers:
+
+- **Don't filter**: Shows all illustrations without aspect ratio restrictions
+- **Width > Height**: Filters for landscape/wide illustrations (suitable for computer wallpapers)
+- **Height > Width**: Filters for portrait/tall illustrations (suitable for phone wallpapers)
+
+### Show All Gallery Images by Default
+
+When enabled, this setting prevents the automatic folding of gallery images with 3 or more illustrations. All images in the gallery will be displayed expanded by default, providing a better browsing experience.
+
+### Show Original Image
+
+When enabled, the detail page will load the original resolution image by default. 
+
+:::warning
+
+**Bandwidth Warning**: Enabling this feature will result in significant bandwidth usage as original images are typically much larger than preview images. Only enable this if you have a stable internet connection and sufficient bandwidth.
+
+:::

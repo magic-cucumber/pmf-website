@@ -14,9 +14,9 @@ In versions prior to V1.6.6:
 - Users had to manually click the "Save" button after download completion to access images in the external file system
 - Users could not directly access downloaded files
 
-### V1.6.6 and Later (Recommended)
+### V1.6.6 to V1.8.0
 
-Since version V1.6.6, the download management feature has been significantly improved:
+From version V1.6.6 to V1.8.0, the download management feature has been significantly improved:
 
 #### iOS
 - **Save Location**: `My iPhone/Pixiv-MultiPlatform`
@@ -32,6 +32,14 @@ Since version V1.6.6, the download management feature has been significantly imp
 - **Save Location**: User-specified folder
 - **Authorization Required**: Need to configure download path in settings page
 - **Configuration**: Go to Settings → Download Settings → Select Download Folder
+
+### V1.8.0 and Later
+
+Starting from version V1.8.0, the download management feature has been further enhanced:
+
+- **EPUB Export Integration**: EPUB export functionality has been moved to the download management system
+- **Background Processing**: You can now exit the novel page while EPUB export is in progress
+- **Unified Management**: All downloads and exports are now managed in one centralized location
 
 ## Configuring Download Path
 
