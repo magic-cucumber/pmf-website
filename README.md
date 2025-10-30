@@ -1,4 +1,4 @@
-# Rspress website
+# pmf website
 
 ## Setup
 
