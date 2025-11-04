@@ -56,7 +56,7 @@ Please check if your VPN or proxy software has been successfully enabled.
 
 #### 3.3 - Unable to Initialize Embedded Browser (since V1.6.4)
 
-So far, there has been [only one case](https://github.com/kagg886/Pixiv-MultiPlatform/issues/16) where the browser core could not be initialized. In the latest version, the following prompt will appear:
+So far, there has been [only one case](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/16) where the browser core could not be initialized. In the latest version, the following prompt will appear:
 
 ![image-20250307230117872](./login.assets/image-20250307230117872.png)
 
@@ -68,7 +68,7 @@ If you also encounter this problem, please check the following steps:
 2. Can this URL be accessed normally: [https://d2xrhe97vsfxuc.cloudfront.net/jbr_jcef-21.0.6-windows-x64-b895.97.tar.gz](https://d2xrhe97vsfxuc.cloudfront.net/jbr_jcef-21.0.6-windows-x64-b895.97.tar.gz)?
    If not accessible, please initialize the embedded browser in a VPN environment.
 3. Download the link mentioned in step `2`, then click the `Select Compressed Package Path` button, choose the `.tar.gz` file you just downloaded, and try again.
-4. If it still fails, please click the link `Click this text to view detailed information`, take a screenshot of the content in the dialog box, and open the [Issue page](https://github.com/kagg886/Pixiv-MultiPlatform/issues/new?template=功能故障.md) to provide feedback.
+4. If it still fails, please click the link `Click this text to view detailed information`, take a screenshot of the content in the dialog box, and open the [Issue page](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/new?template=功能故障.md) to provide feedback.
 
 #### 3.4 - Browser Login Successful, but Failed to Parse User Configuration and Returned to Login Page
 

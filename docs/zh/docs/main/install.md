@@ -20,7 +20,7 @@
 
 ## 我该如何选择安装包？
 
-1. 点击[下载页面](https://github.com/kagg886/Pixiv-MultiPlatform/releases/latest)
+1. 点击[下载页面](https://github.com/magic-cucumber/Pixiv-MultiPlatform/releases/latest)
 2. Windows用户请跳转到[Windows安装](#windows安装)
 3. Linux用户请跳转到[Linux安装](#Linux安装)
 4. macOS用户请跳转到[macOS安装](#macOS安装)

@@ -39,7 +39,7 @@
 
 - 提交pr时请确保您的代码可以在所有target中运行。有些API在`commonMain`里可以找到，但是在编译到特定平台时就会报错。
 
-- 资源文件使用`SvgToCompose进行命名`，目前可以将图标放在`composeApp/src/commonMain/kotlin/top/kagg886/pmf/ui/component/icon`中且暴露在`root`作用域。
+- 资源文件使用`SvgToCompose进行命名`，目前可以将图标放在`composeApp/src/commonMain/kotlin/top/magic-cucumber/pmf/ui/component/icon`中且暴露在`root`作用域。
 
 - 在关键的地方加注释，便于理解
 

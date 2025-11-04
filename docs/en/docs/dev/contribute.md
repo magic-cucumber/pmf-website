@@ -13,6 +13,6 @@ If you don't have a `Github account`, you can join our [Telegram group](https://
 
 ## Submission Steps
 
-If you encounter a BUG while using the software, or if you have suggestions for improvements, please click [Submit Bug Report](https://github.com/kagg886/Pixiv-MultiPlatform/issues/new?template=功能故障.md) to upload a bug issue.
+If you encounter a BUG while using the software, or if you have suggestions for improvements, please click [Submit Bug Report](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/new?template=功能故障.md) to upload a bug issue.
 
-If you need new features while using the software, please click [New Issue](https://github.com/kagg886/Pixiv-MultiPlatform/issues/new?template=功能建议.md) to upload a feature request issue.
+If you need new features while using the software, please click [New Issue](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/new?template=功能建议.md) to upload a feature request issue.

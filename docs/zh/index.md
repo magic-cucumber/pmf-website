@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: 下载
-      link: https://github.com/kagg886/Pixiv-MultiPlatform/releases/latest
+      link: https://github.com/magic-cucumber/Pixiv-MultiPlatform/releases/latest
     - theme: alt
       text: 查看文档
       link: docs/main/welcome

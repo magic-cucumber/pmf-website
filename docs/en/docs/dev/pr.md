@@ -33,7 +33,7 @@ This page assumes you have `Kotlin` and `Android` development environments on yo
 
 - When submitting a PR, please ensure your code can run on all targets. Some APIs can be found in `commonMain`, but may throw errors when compiled to specific platforms.
 
-- Resource files use `SvgToCompose` for naming, and currently icons can be placed in `composeApp/src/commonMain/kotlin/top/kagg886/pmf/ui/component/icon` and exposed in the `root` scope.
+- Resource files use `SvgToCompose` for naming, and currently icons can be placed in `composeApp/src/commonMain/kotlin/top/magic-cucumber/pmf/ui/component/icon` and exposed in the `root` scope.
 
 - Add comments in crucial places to aid understanding
 

@@ -40,7 +40,7 @@
 
 3. 完全去除每一段前后的空格
 
-若您想要了解自动排版的具体代码实现，请参考[rich-text.kt](https://github.com/kagg886/Pixiv-MultiPlatform/blob/483bf913a2cb98a3df0056468e0f77a12d5b58fa/composeApp/src/commonMain/kotlin/top/kagg886/pmf/ui/util/rich-text.kt#L234)
+若您想要了解自动排版的具体代码实现，请参考[rich-text.kt](https://github.com/magic-cucumber/Pixiv-MultiPlatform/blob/483bf913a2cb98a3df0056468e0f77a12d5b58fa/composeApp/src/commonMain/kotlin/top/magic-cucumber/pmf/ui/util/rich-text.kt#L234)
 
 :::
 

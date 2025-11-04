@@ -16,6 +16,6 @@
 
 ## 提交步骤
 
-若您在使用软件的过程中遇到了BUG，或是若您在使用软件的过程中有不满意之处想要提出改进。请点击[提交功能故障](https://github.com/kagg886/Pixiv-MultiPlatform/issues/new?template=功能故障.md)来上传bug issue。
+若您在使用软件的过程中遇到了BUG，或是若您在使用软件的过程中有不满意之处想要提出改进。请点击[提交功能故障](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/new?template=功能故障.md)来上传bug issue。
 
-若您在使用软件的过程中需要新需求。请点击[New Issue](https://github.com/kagg886/Pixiv-MultiPlatform/issues/new?template=功能建议.md)来上传feature issue
+若您在使用软件的过程中需要新需求。请点击[New Issue](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/new?template=功能建议.md)来上传feature issue

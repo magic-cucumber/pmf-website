@@ -20,7 +20,7 @@ If anyone wants to try it, please download, compile, and install it yourself.
 
 ## How should I choose the installation package?
 
-1. Click on the [download page](https://github.com/kagg886/Pixiv-MultiPlatform/releases/latest)
+1. Click on the [download page](https://github.com/magic-cucumber/Pixiv-MultiPlatform/releases/latest)
 2. Windows users, please jump to [Windows Installation](#windows-installation)
 3. Linux users, please jump to [Linux Installation](#linux-installation)
 4. macOS users, please jump to [macOS Installation](#macos-installation)

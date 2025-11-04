@@ -58,7 +58,7 @@ Pixiv-MultiPlatform提供了两种登录方式：
 
 #### 3.3 - 无法初始化嵌入式浏览器(自V1.6.4起)
 
-目前仅出现了[一例](https://github.com/kagg886/Pixiv-MultiPlatform/issues/16)无法初始化浏览器内核的情况。而在最新版本中则会弹出如下的提示：
+目前仅出现了[一例](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/16)无法初始化浏览器内核的情况。而在最新版本中则会弹出如下的提示：
 
 ![image-20250307230117872](./login.assets/image-20250307230117872.png)
 
@@ -70,7 +70,7 @@ Pixiv-MultiPlatform提供了两种登录方式：
 2. 该url是否可以正常访问：[https://d2xrhe97vsfxuc.cloudfront.net/jbr_jcef-21.0.6-windows-x64-b895.97.tar.gz](https://d2xrhe97vsfxuc.cloudfront.net/jbr_jcef-21.0.6-windows-x64-b895.97.tar.gz)。
    如无法访问，请在魔法上网环境下初始化嵌入式浏览器。
 3. 下载步骤`2`中提到的链接，然后点击`选择压缩包路径`按钮，选择您刚刚下载的`.tar.gz`文件后重试
-4. 若仍然失败，请点击`点击此文本以查看详细信息`的链接，将对话框内的内容截图并打开[Issue页面](https://github.com/kagg886/Pixiv-MultiPlatform/issues/new?template=功能故障.md)进行反馈。
+4. 若仍然失败，请点击`点击此文本以查看详细信息`的链接，将对话框内的内容截图并打开[Issue页面](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/new?template=功能故障.md)进行反馈。
 
 #### 3.4 - 浏览器登录成功，解析用户配置时失败并返回到登录页面
 

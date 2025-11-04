@@ -38,7 +38,7 @@ Here's a comparison:
 
 3. Completely removes spaces before and after each paragraph
 
-If you want to know the specific code implementation of auto formatting, please refer to [rich-text.kt](https://github.com/kagg886/Pixiv-MultiPlatform/blob/483bf913a2cb98a3df0056468e0f77a12d5b58fa/composeApp/src/commonMain/kotlin/top/kagg886/pmf/ui/util/rich-text.kt#L234)
+If you want to know the specific code implementation of auto formatting, please refer to [rich-text.kt](https://github.com/magic-cucumber/Pixiv-MultiPlatform/blob/483bf913a2cb98a3df0056468e0f77a12d5b58fa/composeApp/src/commonMain/kotlin/top/magic-cucumber/pmf/ui/util/rich-text.kt#L234)
 
 :::
 
