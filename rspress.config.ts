@@ -13,7 +13,7 @@ export default defineConfig({
         readingTime(),
         pluginMarkDownAutoSpace(),
         sitemap({
-            domain: "https://pmf.magic-cucumber.top",
+            domain: "https://pmf.kagg886.top",
             defaultChangeFreq: "weekly",
             defaultPriority: "0.5",
         }),
