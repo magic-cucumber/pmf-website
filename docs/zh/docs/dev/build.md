@@ -1,4 +1,10 @@
-# 构建应用程序(自V1.7.0)
+# 构建应用程序(自V1.8.2)
+
+:::warning
+
+该教程仅供 v1.8.2 版本的构建，若要构建更早版本，此教程可能会含有未解决的问题，此时请自行探索。
+
+:::
 
 随着APP代码库的增长以及rust代码的引入，单一的`/gradlew`任务已经无法完整地说明如何构建这个APP，特开此贴以进行说明。
 
@@ -8,59 +14,163 @@
 
 :::
 
+## 前置要求
 
+必须安装的工具链如下：
 
-## 开发工具
+- **JDK 17**：用于编译和构建
+- **rustup**：Rust 工具链管理器，用于安装和管理 Rust 目标平台
 
-鉴于IDEA无法支持`AGP8.8.0-alpha05`以上的版本，我们强烈建议使用[Android Studio](https://developer.android.google.cn/studio?hl=zh-cn)进行开发。
+:::info
 
-## 工具链的选择
+可选安装：msvc，用于 Rust 的构建工具选择（Windows 平台可能需要）。
 
-一定要安装的工具链如下：
+:::
 
-- JDK22，Kotlin，Android API36(含NDK)
+:::tip
 
-- Rust相关
+可以通过设置环境变量 `APP_VERSION_NAME` 来指定版本号（可选）：
 
-  > 该工具链目前只用于`gif`模块的使用。
+```bash
+export APP_VERSION_NAME=v1.8.2
+```
 
-  需要切换到nightly语言特性以支持`lazy_get`：`rustup default nightly`
+:::
 
-  ::: info
+## 桌面平台构建
 
-  无论任何用户，都需要安装`i686-linux-android`，` x86_64-linux-android`。
+:::tip 可选步骤
 
-  Mac用户想要运行iOS程序时请安装`x86_64-apple-ios`，`aarch64-apple-ios`，`aarch64-apple-ios-sim`
-  :::
+生成 AboutLibraries 元数据：
 
-酌情安装：
+```bash
+./gradlew exportLibraryDefinitions
+```
 
-- msvc，用于rust的构建工具选择。
+:::
 
+### 构建命令
 
+统一使用以下命令进行构建：
 
-## 运行命令：
+```bash
+./gradlew packageReleaseDistributionForCurrentOS
+```
 
-- Desktop端：`./gradlew run`
+:::tip Windows 平台
 
-- 安卓端：在运行配置里添加`Andorid`相关任务
+Windows 用户可以使用 `./gradlew light` 生成经过改善的 MSI 安装包：
 
-- iOS端：在运行配置里添加`iOS`相关任务
+```bash
+./gradlew light
+```
 
-  ::: tip
+构建完成后，会在 `composeApp/build/compose/binaries/main-release/app/` 目录下生成 flatten 包体和 MSI 安装包。
 
-  需要安装 `Kotlin MultiPlatform`插件。 该插件只支持macOS安装。
-  :::
+:::
 
-## 打包命令：
+:::tip Linux 平台
 
-- Desktop端：`./gradlew packageReleaseDistributionForCurrentOS `
+在构建前，需要安装系统依赖：
 
-  ::: tip
+```bash
+sudo apt update && sudo apt install libwayland-dev
+```
 
-  windows用户可以使用`./gradlew light`生成经过改善的msi package。
-  :::
+构建完成后，会在 `composeApp/build/compose/binaries/main-release/app/` 目录下生成 flatten 包体。
 
-- Android端：`./gradlew assembleRelease`
+:::
 
-- iOS端：`./gradlew buildReleaseIpa`
+:::tip macOS 平台
+
+macOS 平台需要使用专门的命令生成 DMG 安装包：
+
+```bash
+./gradlew packageReleaseDmg
+```
+
+构建完成后，会在 `composeApp/build/compose/binaries/main-release/dmg/` 目录下生成 DMG 文件，系统会自动打开该文件。
+
+:::
+
+## Android 平台构建
+
+### 前置步骤
+
+安装 Rust 目标平台：
+
+```bash
+rustup target add aarch64-linux-android x86_64-linux-android
+```
+
+:::tip 可选步骤
+
+生成 AboutLibraries 元数据：
+
+```bash
+./gradlew exportLibraryDefinitions -PaboutLibraries.exportVariant=release
+```
+
+:::
+
+### 构建命令
+
+```bash
+./gradlew assembleRelease
+```
+
+构建完成后，APK 文件位于 `composeApp/build/outputs/apk/release/composeApp-release.apk`。
+
+:::warning
+
+如果构建过程中出现 Rust 相关错误，请确保已正确安装所需的 Rust 目标平台。可以通过 `rustup target list --installed` 命令查看已安装的目标平台。
+
+:::
+
+## iOS 平台构建
+
+:::danger
+
+iOS 构建只能在 macOS 机器上进行，且只支持 M 芯片。我们不会也未来不会为 Intel Mac 提供支持。
+
+:::
+
+### 前置步骤
+
+安装 Rust 目标平台：
+
+```bash
+rustup target add aarch64-apple-ios
+```
+
+:::tip 可选步骤
+
+生成 AboutLibraries 元数据：
+
+```bash
+./gradlew exportLibraryDefinitions
+```
+
+:::
+
+### 构建命令
+
+```bash
+./gradlew buildReleaseIpa
+```
+
+:::tip
+
+最低需要 Xcode 16.2 版本，理论上不执行切换版本和设置环境变量也能构建。
+
+如果在 `xcode-select` 选择了 Xcode 16.2 后仍然构建失败，试着添加以下环境变量：
+
+```bash
+sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+export PATH=/Applications/Xcode_16.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib:$PATH
+export LIBRARY_PATH="$LIBRARY_PATH:/Applications/Xcode_16.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib"
+```
+
+:::
+
+构建完成后，IPA 文件位于 `composeApp/build/archives/release/Pixiv-MultiPlatform.ipa`。
