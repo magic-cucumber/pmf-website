@@ -1,4 +1,10 @@
-# Building the Application (since V1.7.0)
+# Building the Application (since V1.8.2)
+
+:::warning
+
+This tutorial is only for building v1.8.2. If you want to build earlier versions, this tutorial may contain unresolved issues, and you should explore on your own.
+
+:::
 
 With the growth of the APP codebase and the introduction of Rust code, a single `/gradlew` task can no longer fully explain how to build this APP. This post is created specifically to provide explanation.
 
@@ -8,55 +14,163 @@ This page is not suitable for non-developers.
 
 :::
 
-## Development Tools
-
-Given that IDEA cannot support versions above `AGP8.8.0-alpha05`, we strongly recommend using [Android Studio](https://developer.android.google.cn/studio?hl=en) for development.
-
-## Toolchain Selection
+## Prerequisites
 
 The must-install toolchains are as follows:
 
-- JDK22, Kotlin, Android API36 (including NDK)
+- **JDK 17**: For compilation and building
+- **rustup**: Rust toolchain manager, for installing and managing Rust target platforms
 
-- Rust related
+:::info
 
-  > This toolchain is currently only used for the `gif` module.
+Optional installation: msvc, used for Rust build tool selection (may be required on Windows platform).
 
-  Need to switch to nightly language features to support `lazy_get`: `rustup default nightly`
+:::
 
-  ::: info
+:::tip
 
-  Regardless of the user, everyone needs to install `i686-linux-android`, `x86_64-linux-android`.
+You can specify the version number by setting the environment variable `APP_VERSION_NAME` (optional):
 
-  Mac users who want to run iOS programs should install `x86_64-apple-ios`, `aarch64-apple-ios`, `aarch64-apple-ios-sim`
-  :::
+```bash
+export APP_VERSION_NAME=v1.8.2
+```
 
-Install as needed:
+:::
 
-- msvc, used for Rust build tool selection.
+## Desktop Platform Building
 
-## Run Commands:
+:::tip Optional Step
 
-- Desktop: `./gradlew run`
+Generate AboutLibraries metadata:
 
-- Android: Add `Android` related tasks in the run configuration
+```bash
+./gradlew exportLibraryDefinitions
+```
 
-- iOS: Add `iOS` related tasks in the run configuration
+:::
 
-  ::: tip
+### Build Command
 
-  Need to install the `Kotlin MultiPlatform` plugin. This plugin only supports macOS installation.
-  :::
+Use the following command for building:
 
-## Packaging Commands:
+```bash
+./gradlew packageReleaseDistributionForCurrentOS
+```
 
-- Desktop: `./gradlew packageReleaseDistributionForCurrentOS`
+:::tip Windows Platform
 
-  ::: tip
+Windows users can use `./gradlew light` to generate an improved MSI installer:
 
-  Windows users can use `./gradlew light` to generate an improved msi package.
-  :::
+```bash
+./gradlew light
+```
 
-- Android: `./gradlew assembleRelease`
+After building, the flatten package and MSI installer will be generated in the `composeApp/build/compose/binaries/main-release/app/` directory.
 
-- iOS: `./gradlew buildReleaseIpa`
+:::
+
+:::tip Linux Platform
+
+Before building, you need to install system dependencies:
+
+```bash
+sudo apt update && sudo apt install libwayland-dev
+```
+
+After building, the flatten package will be generated in the `composeApp/build/compose/binaries/main-release/app/` directory.
+
+:::
+
+:::tip macOS Platform
+
+macOS platform needs to use a specific command to generate DMG installer:
+
+```bash
+./gradlew packageReleaseDmg
+```
+
+After building, the DMG file will be generated in the `composeApp/build/compose/binaries/main-release/dmg/` directory, and the system will automatically open it.
+
+:::
+
+## Android Platform Building
+
+### Prerequisites
+
+Install Rust target platforms:
+
+```bash
+rustup target add aarch64-linux-android x86_64-linux-android
+```
+
+:::tip Optional Step
+
+Generate AboutLibraries metadata:
+
+```bash
+./gradlew exportLibraryDefinitions -PaboutLibraries.exportVariant=release
+```
+
+:::
+
+### Build Command
+
+```bash
+./gradlew assembleRelease
+```
+
+After building, the APK file is located at `composeApp/build/outputs/apk/release/composeApp-release.apk`.
+
+:::warning
+
+If Rust-related errors occur during the build process, please ensure that the required Rust target platforms are correctly installed. You can check installed target platforms using the `rustup target list --installed` command.
+
+:::
+
+## iOS Platform Building
+
+:::danger
+
+iOS building can only be performed on macOS machines, and only M-chip Macs are supported. We do not and will not provide support for Intel Macs.
+
+:::
+
+### Prerequisites
+
+Install Rust target platform:
+
+```bash
+rustup target add aarch64-apple-ios
+```
+
+:::tip Optional Step
+
+Generate AboutLibraries metadata:
+
+```bash
+./gradlew exportLibraryDefinitions
+```
+
+:::
+
+### Build Command
+
+```bash
+./gradlew buildReleaseIpa
+```
+
+:::tip
+
+Minimum Xcode 16.2 is required. Theoretically, you can build without switching versions and setting environment variables.
+
+If the build still fails after selecting Xcode 16.2 with `xcode-select`, try adding the following environment variables:
+
+```bash
+sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+export PATH=/Applications/Xcode_16.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib:$PATH
+export LIBRARY_PATH="$LIBRARY_PATH:/Applications/Xcode_16.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib"
+```
+
+:::
+
+After building, the IPA file is located at `composeApp/build/archives/release/Pixiv-MultiPlatform.ipa`.

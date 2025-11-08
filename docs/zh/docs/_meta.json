@@ -17,6 +17,7 @@
         "label": "开发指南"
     },
     "dev/build",
+    "dev/ide",
     "dev/contribute",
     "dev/pr"
 ]

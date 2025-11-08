@@ -17,6 +17,7 @@
         "label": "Development Guide"
     },
     "dev/build",
+    "dev/ide",
     "dev/contribute",
     "dev/pr"
 ]
