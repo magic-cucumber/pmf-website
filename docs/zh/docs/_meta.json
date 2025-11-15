@@ -1,23 +1,24 @@
 [
-    "main/welcome",
-    {
-        "type": "section-header",
-        "label": "软件功能"
-    },
-    "main/install",
-    "main/login",
-    "main/illusts",
-    "main/novel",
-    "main/download",
-    "main/search",
-    "main/keyword",
-    "main/theme",
-    {
-        "type": "section-header",
-        "label": "开发指南"
-    },
-    "dev/build",
-    "dev/ide",
-    "dev/contribute",
-    "dev/pr"
+  "main/welcome",
+  "main/thanks",
+  {
+    "type": "section-header",
+    "label": "软件功能"
+  },
+  "main/install",
+  "main/login",
+  "main/illusts",
+  "main/novel",
+  "main/download",
+  "main/search",
+  "main/keyword",
+  "main/theme",
+  {
+    "type": "section-header",
+    "label": "开发指南"
+  },
+  "dev/build",
+  "dev/ide",
+  "dev/contribute",
+  "dev/pr"
 ]
