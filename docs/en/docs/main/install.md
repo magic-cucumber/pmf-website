@@ -8,15 +8,7 @@ Since version 1.6.0, Pixiv-MultiPlatform supports the following operating system
 - Linux
 - macOS
 - Android
-- iOS (partial support)
-
-::: danger
-
-Due to my lack of familiarity with Mac command line, the iOS package cannot be included in the CI release.
-
-If anyone wants to try it, please download, compile, and install it yourself.
-
-:::
+- iOS
 
 ## How should I choose the installation package?
 
