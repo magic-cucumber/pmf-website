@@ -11,7 +11,7 @@ hero:
       link: https://github.com/magic-cucumber/Pixiv-MultiPlatform/releases/latest
     - theme: alt
       text: 查看文档
-      link: docs/main/welcome
+      link: docs/welcome
 
 features:
   - title: 跨平台

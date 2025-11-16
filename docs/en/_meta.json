@@ -6,7 +6,7 @@
     },
     {
         "text": "Documentation",
-        "link": "/main/welcome",
-        "activeMatch": "^\\/(main|dev)"
+        "link": "/docs/welcome",
+        "activeMatch": "^\\/docs"
     }
 ]

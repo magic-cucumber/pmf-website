@@ -11,7 +11,7 @@ hero:
       link: https://github.com/magic-cucumber/Pixiv-MultiPlatform/releases/latest
     - theme: alt
       text: View Documentation
-      link: docs/main/welcome
+      link: docs/welcome
 
 features:
   - title: Cross-platform

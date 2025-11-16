@@ -1,24 +1,15 @@
 [
-  "main/welcome",
-  "main/thanks",
+  "welcome",
+  "thanks",
   {
-    "type": "section-header",
+    "type": "dir",
+    "name": "main",
     "label": "软件功能"
   },
-  "main/install",
-  "main/login",
-  "main/illusts",
-  "main/novel",
-  "main/download",
-  "main/search",
-  "main/keyword",
-  "main/theme",
   {
-    "type": "section-header",
-    "label": "开发指南"
-  },
-  "dev/build",
-  "dev/ide",
-  "dev/contribute",
-  "dev/pr"
+    "type": "dir",
+    "name": "dev",
+    "label": "开发指南",
+    "collapsed": true
+  }
 ]
