@@ -26,6 +26,10 @@ export default defineConfig({
         {
             lang: 'en',
             label: 'English',
+        },
+        {
+            lang: 'ja',
+            label: '日本語',
         }
     ],
     root: path.join(__dirname, 'docs'),
@@ -49,6 +53,14 @@ export default defineConfig({
                 editLink: {
                     docRepoBaseUrl: 'https://github.com/magic-cucumber/pmf-website/tree/master/docs',
                     text: '📝 Edit this page on GitHub',
+                },
+            },
+            {
+                lang: 'ja',
+                label: '日本語',
+                editLink: {
+                    docRepoBaseUrl: 'https://github.com/magic-cucumber/pmf-website/tree/master/docs',
+                    text: '📝 GitHub でこのページを編集',
                 },
             }
         ],

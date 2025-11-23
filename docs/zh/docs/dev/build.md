@@ -59,7 +59,9 @@ export APP_VERSION_NAME=v1.8.2
 
 :::tip Windows 平台
 
-Windows 用户可以使用 `./gradlew light` 生成经过改善的 MSI 安装包：
+> 在v1.8.3 以前，您可以使用 `./gradlew light` 来生成经过改善的安装包。该安装包包含了快捷方式等旧版本compose插件不支持的功能。
+> 
+> 随着我们迁移到了新版compose插件，我们不再提供 `light` 构建命令。
 
 ```bash
 ./gradlew light

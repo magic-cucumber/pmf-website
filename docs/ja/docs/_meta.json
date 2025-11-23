@@ -1,0 +1,15 @@
+[
+  "welcome",
+  "thanks",
+  {
+    "type": "dir",
+    "name": "main",
+    "label": "アプリ機能"
+  },
+  {
+    "type": "dir",
+    "name": "dev",
+    "label": "開発ガイド",
+    "collapsed": true
+  }
+]

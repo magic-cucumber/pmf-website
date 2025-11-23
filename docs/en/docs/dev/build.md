@@ -59,11 +59,9 @@ Use the following command for building:
 
 :::tip Windows Platform
 
-Windows users can use `./gradlew light` to generate an improved MSI installer:
-
-```bash
-./gradlew light
-```
+> Before v1.8.3, you could use ./gradlew light to generate an improved installer package. This installer included features such as shortcuts, which were not supported by older versions of the Compose plugin. 
+> 
+> As we have migrated to the new Compose plugin, we no longer provide the light build command.
 
 After building, the flatten package and MSI installer will be generated in the `composeApp/build/compose/binaries/main-release/app/` directory.
 

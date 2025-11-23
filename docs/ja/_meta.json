@@ -1,0 +1,12 @@
+[
+    {
+        "text": "ホーム",
+        "link": "/",
+        "activeMatch": "^/$|^\\/index"
+    },
+    {
+        "text": "ドキュメント",
+        "link": "/docs/welcome",
+        "activeMatch": "^\\/docs"
+    }
+]
