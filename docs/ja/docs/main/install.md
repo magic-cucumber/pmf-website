@@ -41,6 +41,18 @@ v1.6.0以残、Pixiv-MultiPlatformは次のオペレーティングシステム�
 
 ### 抜出インストール
 
+:::warning
+
+pixiv-multiplatformはglibc>=2.39を必須とします。`ubuntu 24.04 LTS`とその後のバージョンで実行できます
+
+:::
+
+:::warning
+
+[issue](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/37) の1つの事例では、pixiv-multiplatformが使用するsqliteドライバーがlibunwindのバージョンも要求していることが証明されています。同じ問題が発生した場合は、このissueでコメントを残してください。
+
+:::
+
 `tar` 関連コマンドを使用して、アーカイブファイルを選択した場所に抜出してください
 
 実行権限を得る: `chmod +x ./Pixiv-MultiPlatform`

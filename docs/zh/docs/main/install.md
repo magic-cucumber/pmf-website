@@ -41,6 +41,18 @@
 
 ### 解压缩安装
 
+:::warning
+
+pixiv-multiplatform 硬性要求 glibc>=2.39，您可以在 `ubuntu 24.04 LTS` 及其更高版本运行
+
+:::
+
+:::warning
+
+有一例 [issue](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/37) 证明 pixiv-multiplatform 使用的 sqlite 驱动也要求 libunwind 版本，如果您有相同的问题，请欢迎在此 issue 下留言。
+
+:::
+
 使用`tar`相关命令解压归档文件到你喜欢的位置中
 
 赋予可执行文件权限：`chmod +x ./Pixiv-MultiPlatform`

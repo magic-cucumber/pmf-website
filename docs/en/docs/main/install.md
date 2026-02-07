@@ -41,6 +41,18 @@ Since version 1.6.0, Pixiv-MultiPlatform supports the following operating system
 
 ### Installation via Extraction
 
+:::warning
+
+pixiv-multiplatform strictly requires glibc>=2.39. You can run it on `ubuntu 24.04 LTS` and later versions
+
+:::
+
+:::warning
+
+There is an [issue](https://github.com/magic-cucumber/Pixiv-MultiPlatform/issues/37) that proves the sqlite driver used by pixiv-multiplatform also requires a specific libunwind version. If you encounter the same problem, please feel free to leave a comment on this issue.
+
+:::
+
 Use the `tar` related commands to extract the archive file to a location of your choice
 
 Grant executable permissions: `chmod +x ./Pixiv-MultiPlatform`
