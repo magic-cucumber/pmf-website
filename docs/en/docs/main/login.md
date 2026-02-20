@@ -13,7 +13,8 @@ Pixiv-MultiPlatform provides two login methods:
 
 To ensure UI logic consistency across all platforms, we use an embedded browser.
 
-When using the software for the first time on desktop, you need to initialize the embedded browser, which will download **about 400MB** of browser core and decompress it.
+Before **v1.8.4**, when using the software for the first time on desktop, you needed to initialize the embedded browser, which would download **about 400MB** of browser core and decompress it.
+Since **v1.8.4**, the desktop version has removed the `kcef` dependency, and the embedded browser will **no longer download** the ~300MB Chromium core on first use.
 
 On Android, you can log in directly.
 
@@ -36,7 +37,7 @@ On Android, you can log in directly.
 
    ![image-20250208110605818](./login.assets/image-20250208110605818.png)
 
-2. Wait for the browser to load and display the Pixiv login page.
+2. Wait for the browser to load and display the Pixiv login page. (If you are using v1.8.4, this step should be quick. If it gets stuck on this page, please bring your logs and go to the Issue page.)
 
    ![image-20250208110709549](./login.assets/image-20250208110709549.png)
 
