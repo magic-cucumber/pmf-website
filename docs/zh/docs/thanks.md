@@ -31,6 +31,8 @@
   1. 贡献繁体中文翻译
 - [@UjuiUjuMandan](https://github.com/UjuiUjuMandan)
   1. 将sni bypass的dns从cf切换到yandex
+- [@Rachel122twilight](https://github.com/Rachel122twilight)
+  1. 替换项目的多端预览图片
 
 ## 赞助者名单
 

@@ -29,3 +29,5 @@ If you wish to join the ranks of contributors and have your name listed here, it
   1. Contributed Traditional Chinese translation
 - [@UjuiUjuMandan](https://github.com/UjuiUjuMandan)
   1. Switched the DNS for SNI bypass from Cloudflare to Yandex
+- [@Rachel122twilight](https://github.com/Rachel122twilight)
+  1. Replace the project's multi-platform preview images

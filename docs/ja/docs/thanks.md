@@ -29,3 +29,5 @@
   1. 繁体中文編を提供
 - [@UjuiUjuMandan](https://github.com/UjuiUjuMandan)
   1. SNIバイパス用DNSをCloudflareかYandexに切り替え
+- [@Rachel122twilight](https://github.com/Rachel122twilight)
+  1. プロジェクトのマルチプラットフォーム向けプレビュー画像を差し替える
